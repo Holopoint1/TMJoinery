@@ -968,16 +968,17 @@ a {
 /* Form success state */
 .contact-form-wrap {
     position: relative;
+    min-height: 300px;
 }
 
 .form-success {
     display: none;
-    position: absolute;
-    inset: 0;
-    background: var(--color-cream);
+    background: var(--color-white);
     border-radius: 8px;
+    border: 1px solid var(--color-border);
     align-items: center;
     justify-content: center;
+    min-height: 300px;
 }
 
 .form-success.active {
