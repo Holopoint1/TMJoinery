@@ -700,52 +700,9 @@ a {
     justify-content: center;
 }
 
-.featured-post-embed {
-    position: relative;
-    min-height: 620px;
-}
-
-.fb-post-slide {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-
-.fb-post-slide.active {
-    display: block;
-    opacity: 1;
-}
-
-.fb-post-slide iframe {
+.featured-post-embed iframe {
     max-width: 100%;
     border-radius: 8px;
-}
-
-.fb-post-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 16px;
-}
-
-.fb-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.fb-dot.active {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    transform: scale(1.2);
-}
-
-.fb-dot:hover {
-    background: rgba(255, 255, 255, 0.4);
 }
 
 .projects-cta {

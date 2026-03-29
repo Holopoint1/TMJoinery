@@ -20,37 +20,6 @@
         }, 2200);
     }
 
-    // Facebook post carousel
-    var fbSlides = document.querySelectorAll('.fb-post-slide');
-    var fbDots = document.querySelectorAll('.fb-dot');
-    if (fbSlides.length > 1) {
-        var currentSlide = 0;
-
-        function showSlide(index) {
-            fbSlides[currentSlide].classList.remove('active');
-            fbDots[currentSlide].classList.remove('active');
-            currentSlide = index % fbSlides.length;
-            fbSlides[currentSlide].classList.add('active');
-            fbDots[currentSlide].classList.add('active');
-        }
-
-        // Auto-rotate every 8 seconds
-        var fbInterval = setInterval(function () {
-            showSlide(currentSlide + 1);
-        }, 8000);
-
-        // Click dots to navigate
-        fbDots.forEach(function (dot, i) {
-            dot.addEventListener('click', function () {
-                clearInterval(fbInterval);
-                showSlide(i);
-                fbInterval = setInterval(function () {
-                    showSlide(currentSlide + 1);
-                }, 8000);
-            });
-        });
-    }
-
     // Navbar scroll effect
     var navbar = document.getElementById('navbar');
     var lastScroll = 0;
