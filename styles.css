@@ -701,6 +701,7 @@ a {
     padding: 40px;
     background: var(--color-light-grey);
     border-radius: 12px;
+    overflow: visible;
 }
 
 .featured-post-text h3 {
@@ -727,15 +728,17 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 640px;
+    min-height: 700px;
+    overflow: visible;
 }
 
 .featured-post-embed iframe {
     width: 100%;
     max-width: 100%;
-    min-height: 680px;
-    border-radius: 8px;
+    min-height: 720px;
+    border-radius: 0;
     transition: opacity 0.4s ease;
+    overflow: visible;
 }
 
 .featured-post-embed iframe.fading {
