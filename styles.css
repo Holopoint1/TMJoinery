@@ -968,47 +968,54 @@ a {
 /* Form success state */
 .contact-form-wrap {
     position: relative;
-    min-height: 300px;
 }
 
 .form-success {
     display: none;
     background: var(--color-white);
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    border: 2px solid var(--color-accent);
     align-items: center;
     justify-content: center;
-    min-height: 300px;
+    min-height: 350px;
+    box-shadow: 0 8px 30px rgba(184, 134, 11, 0.1);
 }
 
 .form-success.active {
     display: flex;
+    animation: successPop 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes successPop {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 .form-success-inner {
     text-align: center;
-    padding: 40px;
+    padding: 50px 40px;
 }
 
 .form-success-inner i {
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: var(--color-accent);
     margin-bottom: 20px;
+    display: block;
 }
 
 .form-success-inner h3 {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
-    margin-bottom: 12px;
+    font-size: 2rem;
+    margin-bottom: 14px;
     color: var(--color-dark);
 }
 
 .form-success-inner p {
     color: var(--color-grey);
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     line-height: 1.7;
     margin-bottom: 28px;
-    max-width: 400px;
+    max-width: 420px;
     margin-left: auto;
     margin-right: auto;
 }

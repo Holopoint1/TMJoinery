@@ -230,6 +230,7 @@
                     form.reset();
                     form.style.display = 'none';
                     formSuccess.classList.add('active');
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 } else {
                     showFormError(form);
                 }
