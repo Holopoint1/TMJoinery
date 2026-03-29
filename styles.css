@@ -2051,7 +2051,13 @@ img {
     .featured-post-embed iframe {
         width: 100%;
         max-width: 100%;
-        height: 500px;
+        height: auto;
+        min-height: 700px;
+    }
+
+    .featured-post-embed {
+        min-height: auto;
+        overflow: visible;
     }
 
     .featured-post-socials {
@@ -2372,7 +2378,7 @@ img {
     }
 
     .featured-post-embed iframe {
-        height: 420px;
+        min-height: 650px;
     }
 
     .footer-logo {
