@@ -1265,11 +1265,12 @@ a {
 .page-header {
     position: relative;
     height: 340px;
+    padding-top: 82px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: url('Assets/Pics/main background.jpg') center/cover no-repeat;
-    margin-top: 72px;
+    margin-top: 0;
 }
 
 .page-header-overlay {
