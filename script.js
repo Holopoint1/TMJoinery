@@ -9,15 +9,25 @@
     var words = document.querySelectorAll('.rotating-word');
     if (words.length > 0) {
         var currentWord = 0;
+        var isAnimating = false;
         setInterval(function () {
-            words[currentWord].classList.remove('active');
-            words[currentWord].classList.add('exit');
+            if (isAnimating) return;
+            isAnimating = true;
+            var prev = currentWord;
+            // Clear all words first to prevent overlap
+            words.forEach(function (w) {
+                w.classList.remove('active');
+                w.classList.remove('exit');
+            });
+            words[prev].classList.add('exit');
+            var next = (prev + 1) % words.length;
             setTimeout(function () {
-                words[currentWord].classList.remove('exit');
-                currentWord = (currentWord + 1) % words.length;
-                words[currentWord].classList.add('active');
-            }, 400);
-        }, 2200);
+                words[prev].classList.remove('exit');
+                currentWord = next;
+                words[next].classList.add('active');
+                isAnimating = false;
+            }, 500);
+        }, 2500);
     }
 
     // Facebook post carousel - single iframe, swap src

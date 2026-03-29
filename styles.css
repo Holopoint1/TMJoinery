@@ -348,17 +348,21 @@ a {
     letter-spacing: 1px;
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    pointer-events: none;
+    visibility: hidden;
 }
 
 .rotating-word.active {
     opacity: 1;
     transform: translateY(0);
+    visibility: visible;
 }
 
 .rotating-word.exit {
     opacity: 0;
     transform: translateY(-30px);
+    visibility: visible;
 }
 
 .hero-buttons {
