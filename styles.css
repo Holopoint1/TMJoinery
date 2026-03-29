@@ -508,12 +508,21 @@ a {
     line-height: 1.7;
 }
 
-/* 7th Service Card - CTA style */
+/* 7th Service Card - CTA style, spans full bottom row */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
 .service-card-cta {
+    grid-column: 1 / -1;
     background: var(--color-charcoal);
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .service-card-cta:hover {
@@ -522,27 +531,29 @@ a {
 
 .service-cta-inner {
     text-align: center;
-    padding: 40px 30px;
+    padding: 44px 40px;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
 .service-cta-inner i {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: var(--color-accent);
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .service-cta-inner h3 {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     color: var(--color-white);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .service-cta-inner p {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 0.92rem;
     line-height: 1.7;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
 
 .service-card-cta:hover .service-cta-inner h3 {
