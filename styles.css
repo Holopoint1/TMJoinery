@@ -1944,15 +1944,16 @@ img {
 
     /* Mobile Services */
     .services-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
     }
 
     .service-tile {
-        padding: 28px 24px;
+        padding: 24px 20px;
         display: flex;
-        gap: 20px;
-        align-items: flex-start;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
     }
 
     .service-tile::before {
@@ -1960,19 +1961,24 @@ img {
     }
 
     .service-tile-icon {
-        margin-bottom: 0;
-        min-width: 46px;
-        width: 46px;
-        height: 46px;
+        margin-bottom: 14px;
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+    }
+
+    .service-tile-icon i {
+        font-size: 1.1rem;
     }
 
     .service-tile h3 {
-        font-size: 1.05rem;
-        margin-bottom: 6px;
+        font-size: 0.95rem;
+        margin-bottom: 8px;
     }
 
     .service-tile p {
-        font-size: 0.83rem;
+        font-size: 0.8rem;
+        line-height: 1.6;
     }
 
     .services-bottom {
@@ -2316,9 +2322,28 @@ img {
         font-size: 1.55rem;
     }
 
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
     .service-tile {
-        padding: 22px 18px;
+        padding: 20px 18px;
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
         gap: 16px;
+    }
+
+    .service-tile-icon {
+        margin-bottom: 0;
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .service-tile p {
+        display: none;
     }
 
     .project-img {
