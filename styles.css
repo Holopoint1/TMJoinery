@@ -690,9 +690,9 @@ a {
 /* Featured Facebook Post */
 .featured-post {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     gap: 50px;
-    align-items: center;
+    align-items: start;
     margin-bottom: 60px;
     padding: 50px;
     background: var(--color-light-grey);
@@ -721,11 +721,15 @@ a {
 
 .featured-post-embed {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 640px;
 }
 
 .featured-post-embed iframe {
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
+    min-height: 620px;
     border-radius: 8px;
     transition: opacity 0.4s ease;
 }
@@ -737,13 +741,14 @@ a {
 .fb-post-dots {
     display: flex;
     justify-content: center;
-    gap: 8px;
-    margin-top: 16px;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 4px 0;
 }
 
 .fb-dot {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: var(--color-border);
     cursor: pointer;
