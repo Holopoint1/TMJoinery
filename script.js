@@ -141,8 +141,8 @@
         if (aboutImg) { aboutImg.classList.add('reveal-right'); revealObserver.observe(aboutImg); }
 
         // Service cards - staggered
-        document.querySelectorAll('.service-card').forEach(function (el, i) {
-            el.classList.add('reveal', 'stagger-' + (i + 1));
+        document.querySelectorAll('.service-row').forEach(function (el, i) {
+            el.classList.add('reveal', 'stagger-' + Math.min(i + 1, 6));
             revealObserver.observe(el);
         });
 
