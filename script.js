@@ -20,6 +20,51 @@
         }, 2200);
     }
 
+    // Facebook post carousel - single iframe, swap src
+    var fbFrame = document.getElementById('fbCarouselFrame');
+    var fbDots = document.querySelectorAll('.fb-dot');
+    if (fbFrame && fbDots.length > 0) {
+        var fbPosts = [
+            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Dq8mex6z7p6MWWUvstUe48fn3bvWWK7kf8gynDJBQTWsMJExyYT1LCS1TTcjixc3l%26id%3D61568900701388&show_text=true&width=500',
+            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D122135947574630023%26id%3D61568900701388&show_text=true&width=500',
+            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0CuBgYqGKWBvTxJs3CqZDQi5sY7t2CNMkzCqvWCVbyuzSLha6G6QFTzqD2vy87KoUl%26id%3D61568900701388&show_text=true&width=500',
+            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ebgbbczGTevjjWdutffWuxDSSZrpLnnczCWQy7f5EhMZpoBZtEbGQPdSwAnj7GYZl%26id%3D61568900701388&show_text=true&width=500',
+            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D122132240966630023%26id%3D61568900701388&show_text=true&width=500'
+        ];
+        var currentFb = 0;
+
+        function showFbPost(index) {
+            fbDots[currentFb].classList.remove('active');
+            currentFb = index % fbPosts.length;
+            fbDots[currentFb].classList.add('active');
+            fbFrame.classList.add('fading');
+            setTimeout(function () {
+                fbFrame.src = fbPosts[currentFb];
+                fbFrame.onload = function () {
+                    fbFrame.classList.remove('fading');
+                };
+                // Fallback if onload doesn't fire
+                setTimeout(function () {
+                    fbFrame.classList.remove('fading');
+                }, 1500);
+            }, 400);
+        }
+
+        var fbInterval = setInterval(function () {
+            showFbPost(currentFb + 1);
+        }, 10000);
+
+        fbDots.forEach(function (dot, i) {
+            dot.addEventListener('click', function () {
+                clearInterval(fbInterval);
+                showFbPost(i);
+                fbInterval = setInterval(function () {
+                    showFbPost(currentFb + 1);
+                }, 10000);
+            });
+        });
+    }
+
     // Navbar scroll effect
     var navbar = document.getElementById('navbar');
     var lastScroll = 0;

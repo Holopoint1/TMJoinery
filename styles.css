@@ -703,6 +703,36 @@ a {
 .featured-post-embed iframe {
     max-width: 100%;
     border-radius: 8px;
+    transition: opacity 0.4s ease;
+}
+
+.featured-post-embed iframe.fading {
+    opacity: 0;
+}
+
+.fb-post-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.fb-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fb-dot.active {
+    background: var(--color-accent);
+    transform: scale(1.2);
+}
+
+.fb-dot:hover {
+    background: var(--color-grey);
 }
 
 .projects-cta {
