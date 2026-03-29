@@ -690,11 +690,11 @@ a {
 /* Featured Facebook Post */
 .featured-post {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 40px;
     align-items: start;
     margin-bottom: 60px;
-    padding: 50px;
+    padding: 40px;
     background: var(--color-light-grey);
     border-radius: 12px;
 }
@@ -728,8 +728,8 @@ a {
 
 .featured-post-embed iframe {
     width: 100%;
-    max-width: 500px;
-    min-height: 620px;
+    max-width: 100%;
+    min-height: 680px;
     border-radius: 8px;
     transition: opacity 0.4s ease;
 }

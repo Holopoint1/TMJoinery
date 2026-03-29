@@ -25,11 +25,11 @@
     var fbDots = document.querySelectorAll('.fb-dot');
     if (fbFrame && fbDots.length > 0) {
         var fbPosts = [
-            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Dq8mex6z7p6MWWUvstUe48fn3bvWWK7kf8gynDJBQTWsMJExyYT1LCS1TTcjixc3l%26id%3D61568900701388&show_text=true&width=500',
-            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D122135947574630023%26id%3D61568900701388&show_text=true&width=500',
-            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0CuBgYqGKWBvTxJs3CqZDQi5sY7t2CNMkzCqvWCVbyuzSLha6G6QFTzqD2vy87KoUl%26id%3D61568900701388&show_text=true&width=500',
-            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ebgbbczGTevjjWdutffWuxDSSZrpLnnczCWQy7f5EhMZpoBZtEbGQPdSwAnj7GYZl%26id%3D61568900701388&show_text=true&width=500',
-            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D122132240966630023%26id%3D61568900701388&show_text=true&width=500'
+            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Dq8mex6z7p6MWWUvstUe48fn3bvWWK7kf8gynDJBQTWsMJExyYT1LCS1TTcjixc3l%26id%3D61568900701388&show_text=true&width=700',
+            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D122135947574630023%26id%3D61568900701388&show_text=true&width=700',
+            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0CuBgYqGKWBvTxJs3CqZDQi5sY7t2CNMkzCqvWCVbyuzSLha6G6QFTzqD2vy87KoUl%26id%3D61568900701388&show_text=true&width=700',
+            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ebgbbczGTevjjWdutffWuxDSSZrpLnnczCWQy7f5EhMZpoBZtEbGQPdSwAnj7GYZl%26id%3D61568900701388&show_text=true&width=700',
+            'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D122132240966630023%26id%3D61568900701388&show_text=true&width=700'
         ];
         var currentFb = 0;
 
