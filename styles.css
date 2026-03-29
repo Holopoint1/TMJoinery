@@ -477,6 +477,26 @@ a {
     line-height: 1.7;
 }
 
+/* Services CTA */
+.services-cta {
+    margin-top: 50px;
+    text-align: center;
+    padding: 36px 40px;
+    background: var(--color-white);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.services-cta p {
+    color: var(--color-grey);
+    font-size: 1.02rem;
+    margin-bottom: 20px;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
 /* ========================================
    Projects / Our Work
    ======================================== */
