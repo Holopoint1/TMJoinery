@@ -694,7 +694,7 @@ a {
 /* Featured Facebook Post */
 .featured-post {
     display: grid;
-    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: start;
     margin-bottom: 60px;
@@ -728,17 +728,13 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 700px;
-    overflow: visible;
 }
 
 .featured-post-embed iframe {
     width: 100%;
-    max-width: 100%;
-    min-height: 720px;
-    border-radius: 0;
+    max-width: 520px;
+    height: 750px;
     transition: opacity 0.4s ease;
-    overflow: visible;
 }
 
 .featured-post-embed iframe.fading {
@@ -2051,13 +2047,7 @@ img {
     .featured-post-embed iframe {
         width: 100%;
         max-width: 100%;
-        height: auto;
-        min-height: 700px;
-    }
-
-    .featured-post-embed {
-        min-height: auto;
-        overflow: visible;
+        height: 700px;
     }
 
     .featured-post-socials {
@@ -2378,7 +2368,7 @@ img {
     }
 
     .featured-post-embed iframe {
-        min-height: 650px;
+        height: 650px;
     }
 
     .footer-logo {
