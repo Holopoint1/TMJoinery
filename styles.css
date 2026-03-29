@@ -318,11 +318,42 @@ a {
 }
 
 .hero-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     font-weight: 300;
     opacity: 0.9;
-    margin-bottom: 40px;
-    letter-spacing: 0.3px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.hero-rotating {
+    height: 50px;
+    margin-bottom: 36px;
+    position: relative;
+    overflow: hidden;
+}
+
+.rotating-word {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.rotating-word.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rotating-word.exit {
+    opacity: 0;
+    transform: translateY(-30px);
 }
 
 .hero-buttons {
@@ -1706,7 +1737,15 @@ img {
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.05rem;
+    }
+
+    .rotating-word {
+        font-size: 1.5rem;
+    }
+
+    .hero-rotating {
+        height: 42px;
     }
 
     .section-header h2 {

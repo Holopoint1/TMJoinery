@@ -5,6 +5,21 @@
 (function () {
     'use strict';
 
+    // Rotating words in hero
+    var words = document.querySelectorAll('.rotating-word');
+    if (words.length > 0) {
+        var currentWord = 0;
+        setInterval(function () {
+            words[currentWord].classList.remove('active');
+            words[currentWord].classList.add('exit');
+            setTimeout(function () {
+                words[currentWord].classList.remove('exit');
+                currentWord = (currentWord + 1) % words.length;
+                words[currentWord].classList.add('active');
+            }, 400);
+        }, 2200);
+    }
+
     // Navbar scroll effect
     var navbar = document.getElementById('navbar');
     var lastScroll = 0;
