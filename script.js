@@ -210,6 +210,7 @@
     var contactFormEl = document.getElementById('contactForm');
     var formSuccess = document.getElementById('formSuccess');
     var sendAnother = document.getElementById('sendAnother');
+    var contactContent = document.getElementById('contactContent');
 
     if (contactFormEl) {
         contactFormEl.addEventListener('submit', function (e) {
@@ -228,7 +229,7 @@
             .then(function (response) {
                 if (response.ok) {
                     form.reset();
-                    form.style.display = 'none';
+                    contactContent.style.display = 'none';
                     formSuccess.classList.add('active');
                     formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 } else {
@@ -247,7 +248,7 @@
         submitBtn.disabled = false;
         formSuccess.querySelector('h3').textContent = 'Something went wrong';
         formSuccess.querySelector('p').textContent = 'Please try again or contact us directly at info@tmjoineryltd.co.uk or call 07951484277.';
-        form.style.display = 'none';
+        contactContent.style.display = 'none';
         formSuccess.classList.add('active');
     }
 
@@ -256,7 +257,7 @@
             formSuccess.classList.remove('active');
             formSuccess.querySelector('h3').textContent = 'Message Sent';
             formSuccess.querySelector('p').textContent = "Thanks for getting in touch! We've received your enquiry and will get back to you as soon as possible.";
-            contactFormEl.style.display = 'grid';
+            contactContent.style.display = 'block';
         });
     }
 
