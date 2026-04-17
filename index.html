@@ -35,6 +35,15 @@
     <meta name="geo.position" content="55.74;-4.29">
     <meta name="ICBM" content="55.74, -4.29">
 
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', localStorage.getItem('tmj_ga_id') || 'GA_MEASUREMENT_ID');
+    </script>
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -390,7 +399,7 @@
                     </div>
                 </div>
                 <div class="featured-post-embed">
-                    <iframe id="fbCarouselFrame" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Dq8mex6z7p6MWWUvstUe48fn3bvWWK7kf8gynDJBQTWsMJExyYT1LCS1TTcjixc3l%26id%3D61568900701388&show_text=true&width=500" width="500" height="750" style="border:none;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    <iframe id="fbCarouselFrame" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Dq8mex6z7p6MWWUvstUe48fn3bvWWK7kf8gynDJBQTWsMJExyYT1LCS1TTcjixc3l%26id%3D61568900701388&show_text=true&width=700" width="700" height="750" style="border:none;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     <div class="fb-post-dots" id="fbPostDots">
                         <span class="fb-dot active"></span>
                         <span class="fb-dot"></span>

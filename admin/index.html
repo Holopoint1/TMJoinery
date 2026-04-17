@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>TM Joinery Ltd - Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Login Screen -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <div class="login-logo">
+                <i class="fas fa-tools"></i>
+                <h1>TM Joinery Ltd</h1>
+                <p>Admin Dashboard</p>
+            </div>
+            <form id="loginForm">
+                <div class="login-field">
+                    <label for="loginUser">Username</label>
+                    <input type="text" id="loginUser" autocomplete="username" required>
+                </div>
+                <div class="login-field">
+                    <label for="loginPass">Password</label>
+                    <input type="password" id="loginPass" autocomplete="current-password" required>
+                </div>
+                <div class="login-error" id="loginError"></div>
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard" style="display:none;">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-tools"></i>
+                <span>TM Joinery</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="overview">
+                    <i class="fas fa-th-large"></i><span>Overview</span>
+                </a>
+                <a href="#" class="nav-item" data-page="seo">
+                    <i class="fas fa-search"></i><span>SEO Audit</span>
+                </a>
+                <a href="#" class="nav-item" data-page="analytics">
+                    <i class="fas fa-chart-line"></i><span>Analytics</span>
+                </a>
+                <a href="#" class="nav-item" data-page="enquiries">
+                    <i class="fas fa-envelope"></i><span>Enquiries</span>
+                </a>
+                <a href="#" class="nav-item" data-page="performance">
+                    <i class="fas fa-tachometer-alt"></i><span>Performance</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="https://www.tmjoineryltd.co.uk" target="_blank" class="nav-item">
+                    <i class="fas fa-external-link-alt"></i><span>View Site</span>
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i><span>Sign Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h2 id="pageTitle">Overview</h2>
+                <div class="topbar-right">
+                    <span class="topbar-date" id="topbarDate"></span>
+                </div>
+            </header>
+
+            <!-- Page: Overview -->
+            <div class="page active" id="page-overview">
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="fas fa-file-alt"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value">2</span>
+                            <span class="stat-label">Live Pages</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="seoScore">--</span>
+                            <span class="stat-label">SEO Score</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon amber"><i class="fas fa-star"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value">5.0</span>
+                            <span class="stat-label">Google Rating</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fas fa-comment-dots"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value">6</span>
+                            <span class="stat-label">Reviews</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Site Pages</h3>
+                        </div>
+                        <div class="card-body">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>Page</th><th>URL</th><th>Status</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Homepage</td>
+                                        <td><a href="https://www.tmjoineryltd.co.uk/" target="_blank">tmjoineryltd.co.uk</a></td>
+                                        <td><span class="badge green">Live</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>About</td>
+                                        <td><a href="https://www.tmjoineryltd.co.uk/about.html" target="_blank">tmjoineryltd.co.uk/about</a></td>
+                                        <td><span class="badge green">Live</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Quick SEO Checklist</h3>
+                        </div>
+                        <div class="card-body" id="quickChecklist">
+                            <div class="checklist-loading"><i class="fas fa-spinner fa-spin"></i> Running checks...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Technical Setup</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="setup-grid">
+                            <div class="setup-item">
+                                <i class="fas fa-sitemap"></i>
+                                <div>
+                                    <strong>Sitemap</strong>
+                                    <p>sitemap.xml with 2 pages</p>
+                                </div>
+                                <span class="badge green">Active</span>
+                            </div>
+                            <div class="setup-item">
+                                <i class="fas fa-robot"></i>
+                                <div>
+                                    <strong>Robots.txt</strong>
+                                    <p>All crawlers allowed incl. AI bots</p>
+                                </div>
+                                <span class="badge green">Active</span>
+                            </div>
+                            <div class="setup-item">
+                                <i class="fas fa-code"></i>
+                                <div>
+                                    <strong>Schema Markup</strong>
+                                    <p>LocalBusiness, Reviews, Breadcrumbs</p>
+                                </div>
+                                <span class="badge green">Active</span>
+                            </div>
+                            <div class="setup-item">
+                                <i class="fas fa-share-alt"></i>
+                                <div>
+                                    <strong>Open Graph</strong>
+                                    <p>Facebook & Twitter cards configured</p>
+                                </div>
+                                <span class="badge green">Active</span>
+                            </div>
+                            <div class="setup-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Contact Form</strong>
+                                    <p>FormSubmit.co &rarr; info@tmjoineryltd.co.uk</p>
+                                </div>
+                                <span class="badge green">Active</span>
+                            </div>
+                            <div class="setup-item" id="gaSetupItem">
+                                <i class="fab fa-google"></i>
+                                <div>
+                                    <strong>Google Analytics</strong>
+                                    <p id="gaSetupStatus">Checking...</p>
+                                </div>
+                                <span class="badge" id="gaSetupBadge">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page: SEO Audit -->
+            <div class="page" id="page-seo">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>SEO Audit Results</h3>
+                        <button class="btn-sm" id="runAuditBtn"><i class="fas fa-sync-alt"></i> Re-run Audit</button>
+                    </div>
+                    <div class="card-body" id="seoAuditResults">
+                        <div class="checklist-loading"><i class="fas fa-spinner fa-spin"></i> Running SEO audit...</div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header"><h3>Homepage Meta Tags</h3></div>
+                        <div class="card-body" id="homeMetaTags">
+                            <div class="checklist-loading"><i class="fas fa-spinner fa-spin"></i> Loading...</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h3>About Page Meta Tags</h3></div>
+                        <div class="card-body" id="aboutMetaTags">
+                            <div class="checklist-loading"><i class="fas fa-spinner fa-spin"></i> Loading...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header"><h3>Structured Data (Schema)</h3></div>
+                    <div class="card-body" id="schemaResults">
+                        <div class="checklist-loading"><i class="fas fa-spinner fa-spin"></i> Loading...</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header"><h3>Useful SEO Tools</h3></div>
+                    <div class="card-body">
+                        <div class="tools-grid">
+                            <a href="https://search.google.com/search-console" target="_blank" class="tool-link">
+                                <i class="fab fa-google"></i>
+                                <strong>Google Search Console</strong>
+                                <p>Monitor search performance, indexing, and crawl issues</p>
+                            </a>
+                            <a href="https://search.google.com/test/rich-results" target="_blank" class="tool-link">
+                                <i class="fas fa-code"></i>
+                                <strong>Rich Results Test</strong>
+                                <p>Test your structured data for rich search results</p>
+                            </a>
+                            <a href="https://pagespeed.web.dev/" target="_blank" class="tool-link">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <strong>PageSpeed Insights</strong>
+                                <p>Analyse page speed and Core Web Vitals</p>
+                            </a>
+                            <a href="https://www.google.com/business/" target="_blank" class="tool-link">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <strong>Google Business Profile</strong>
+                                <p>Manage your local listing, reviews, and info</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page: Analytics -->
+            <div class="page" id="page-analytics">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Google Analytics</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="analytics-setup">
+                            <div class="analytics-status" id="analyticsStatus">
+                                <i class="fas fa-chart-line"></i>
+                                <h3>Google Analytics is Ready</h3>
+                                <p>The GA4 tracking snippet is installed on all pages. To start collecting data:</p>
+                                <ol>
+                                    <li>Go to <a href="https://analytics.google.com" target="_blank">analytics.google.com</a></li>
+                                    <li>Create a new GA4 property for <strong>tmjoineryltd.co.uk</strong></li>
+                                    <li>Copy your Measurement ID (starts with <code>G-</code>)</li>
+                                    <li>Enter it below to activate tracking</li>
+                                </ol>
+                            </div>
+                            <div class="ga-config">
+                                <label for="gaIdInput">GA4 Measurement ID</label>
+                                <div class="input-group">
+                                    <input type="text" id="gaIdInput" placeholder="G-XXXXXXXXXX">
+                                    <button class="btn-primary" id="saveGaId">Save</button>
+                                </div>
+                                <p class="help-text" id="gaHelp">Once saved, the tracking code on your site will start sending data to your GA4 property.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Google Search Console</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="analytics-setup">
+                            <div class="analytics-status">
+                                <i class="fab fa-google"></i>
+                                <h3>Search Console Setup</h3>
+                                <p>Google Search Console shows you how your site appears in Google Search results, which keywords bring visitors, and any indexing issues.</p>
+                                <ol>
+                                    <li>Go to <a href="https://search.google.com/search-console" target="_blank">Google Search Console</a></li>
+                                    <li>Add property &rarr; choose <strong>URL prefix</strong></li>
+                                    <li>Enter <code>https://www.tmjoineryltd.co.uk</code></li>
+                                    <li>Verify via HTML tag or DNS (recommended for GitHub Pages)</li>
+                                </ol>
+                                <a href="https://search.google.com/search-console" target="_blank" class="btn-primary" style="display:inline-block;margin-top:12px;">Open Search Console</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page: Enquiries -->
+            <div class="page" id="page-enquiries">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Contact Form Enquiries</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="analytics-setup">
+                            <div class="analytics-status">
+                                <i class="fas fa-envelope-open-text"></i>
+                                <h3>Enquiries via Email</h3>
+                                <p>Your contact form sends all enquiries directly to <strong>info@tmjoineryltd.co.uk</strong> via FormSubmit.co.</p>
+                            </div>
+                            <div class="enquiry-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Form Provider</span>
+                                    <span class="detail-value">FormSubmit.co</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Destination Email</span>
+                                    <span class="detail-value">info@tmjoineryltd.co.uk</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Subject Line</span>
+                                    <span class="detail-value">"New enquiry from TM Joinery website"</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Spam Protection</span>
+                                    <span class="detail-value">Honeypot field (enabled)</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Template</span>
+                                    <span class="detail-value">Table format</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Form Fields Collected</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Field</th><th>Type</th><th>Required</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Name</td><td>Text</td><td><span class="badge green">Yes</span></td></tr>
+                                <tr><td>Email</td><td>Email</td><td><span class="badge green">Yes</span></td></tr>
+                                <tr><td>Phone</td><td>Tel</td><td><span class="badge grey">No</span></td></tr>
+                                <tr><td>Service Required</td><td>Select dropdown</td><td><span class="badge grey">No</span></td></tr>
+                                <tr><td>Project Details</td><td>Textarea</td><td><span class="badge green">Yes</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header"><h3>Managing Enquiries</h3></div>
+                    <div class="card-body">
+                        <div class="tips-list">
+                            <div class="tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Check your inbox regularly</strong>
+                                    <p>All form submissions arrive at info@tmjoineryltd.co.uk. Set up email notifications or filters to flag these.</p>
+                                </div>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Check spam folder</strong>
+                                    <p>Occasionally FormSubmit emails can land in spam. Whitelist formsubmit.co in your email settings.</p>
+                                </div>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>FormSubmit Dashboard</strong>
+                                    <p>You can manage form settings, add CC recipients, and set up auto-responses at <a href="https://formsubmit.co/" target="_blank">formsubmit.co</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page: Performance -->
+            <div class="page" id="page-performance">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Page Performance</h3>
+                        <button class="btn-sm" id="runPerfBtn"><i class="fas fa-sync-alt"></i> Re-test</button>
+                    </div>
+                    <div class="card-body" id="perfResults">
+                        <div class="checklist-loading"><i class="fas fa-spinner fa-spin"></i> Testing performance...</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header"><h3>Run Full Test on Google</h3></div>
+                    <div class="card-body">
+                        <div class="tools-grid">
+                            <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fwww.tmjoineryltd.co.uk%2F" target="_blank" class="tool-link">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <strong>Homepage - PageSpeed</strong>
+                                <p>Run Google Lighthouse on the homepage</p>
+                            </a>
+                            <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fwww.tmjoineryltd.co.uk%2Fabout.html" target="_blank" class="tool-link">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <strong>About Page - PageSpeed</strong>
+                                <p>Run Google Lighthouse on the about page</p>
+                            </a>
+                            <a href="https://www.webpagetest.org/" target="_blank" class="tool-link">
+                                <i class="fas fa-vial"></i>
+                                <strong>WebPageTest</strong>
+                                <p>Detailed waterfall, TTFB, and rendering analysis</p>
+                            </a>
+                            <a href="https://gtmetrix.com/" target="_blank" class="tool-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <strong>GTmetrix</strong>
+                                <p>Performance grades and optimisation recommendations</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
